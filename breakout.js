@@ -37,9 +37,10 @@ function setup() {
         }
     }
 
-
+    //muestra la informacion del jugador
     mostrarInfo()
 
+    //lanza mensaje de victoria
     if (cuadros.length == 0) {
         niveles++
         if (niveles <= 3) {
@@ -54,6 +55,7 @@ function setup() {
         }
     }
 
+    //lanza mensaje en caso de perder y reinicia el juego
     if (vidas <=0) {
         noLoop()
         textAlign(CENTER, CENTER)
@@ -91,7 +93,7 @@ function setup() {
     jugador.move(0)
   }
 
-  //muestra a informacion del jugador
+  //funcion para mostrar los datos de la partida
   function mostrarInfo() {
     fill(255, 255, 255)
     textSize(14)
@@ -100,6 +102,7 @@ function setup() {
     text(`Nivel: ${niveles}`, width / 2 - 20, 20)
   }
 
+  //carga los niveles
   function cargaNivel(n){
     cuadros = []
     infoNivel = getInfoNivel(n)
@@ -121,8 +124,7 @@ function setup() {
 
     //aqui esta las velocidades de los niveles
     velBola = n + 4
-    //if (n == 2) velBola = 6
-    //if (n == 3) velBola = 7
+    
   }
 
   //funcion para reiniciar si se pierde
